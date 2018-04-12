@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const { Router } = require('express');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+require('../db/models/User.js');
+require('../db/models/Team.js');
 
-module.exports = router;
+const users = require('./users');
+const teams = require('./teams');
+
+const createRouter = (auth) => {
+  const router = new Router();
+
+  router.use('/users', users);
+  router.use('/teams', teams);
+
+  return router;
+};
+
+module.exports = createRouter;

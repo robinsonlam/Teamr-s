@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "ejs": "^2.5.8",
-    "express-async-errors": "^2.1.2"
+    "express-async-errors": "^2.1.2",
+    "lodash": "^4.17.5"
   }
 }

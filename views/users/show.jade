@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    h3
+      a(href="/users") User List
+    h1 User Detail
+    table
+      tbody
+        tr
+          td First Name
+          td :
+          td= user.first_name
+        tr
+          td Last Name
+          td :
+          td= user.last_name
+        tr
+          td Email
+          td :
+          td= user.email
+
+    h3
+      a(href=("/users/edit/" + user._id)) EDIT
+    form(action=("/users/delete" + user._id) method="post")
+      button(type="submit") DELETE

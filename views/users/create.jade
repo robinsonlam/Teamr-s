@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    h3
+      a(href="/users") User List
+    h1 Create New User
+    form(action=("/users/save") method="post")
+
+      table
+        tbody
+          tr
+            td First Name
+            td
+              input(type="text" name="first_name")
+          tr
+            td Last Name
+            td
+              input(type="text" name="last_name")
+          tr
+            td Email
+            td
+              input(type="text" name="email")
+          tr
+            td(colspan="2")
+              input(type="submit" value="Save")

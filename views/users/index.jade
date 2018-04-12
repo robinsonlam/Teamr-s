@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .container
+    h3
+      a(href="/users/create") Create User
+    h1 User List
+    if (users.length > 0)
+      table
+        thead
+          tr
+          th First Name
+          th Last Name
+          th Email
+        tbody
+          each val in users
+            tr
+              td
+                a(href=("/users/show/" + val._id))= val.first_name
+              td= val.last_name
+              td= val.email
+    else
+      div No users found.

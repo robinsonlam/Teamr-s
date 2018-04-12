@@ -12,7 +12,6 @@ module.exports = new Router()
   })
   .post('', async ({ body }, res) => {
     const { name, sport } = body;
-    console.log(name, sport);
 
     try {
       const team = await models.Team.findOrCreate({ name, sport })

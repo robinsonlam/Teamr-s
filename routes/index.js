@@ -9,6 +9,10 @@ const teams = require('./teams');
 const createRouter = (auth) => {
   const router = new Router();
 
+  router.get('/', function(req, res, next) {
+    res.render('index', { title: 'Express' });
+  });
+  
   router.use('/users', users);
   router.use('/teams', teams);
 

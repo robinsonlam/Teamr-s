@@ -10,7 +10,8 @@ const createRouter = require('./routes');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/test')
+
+mongoose.connect(process.env.MONGODB_MAROON_URI || 'mongodb://localhost/test')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 

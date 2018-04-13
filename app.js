@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function (errMessage, database) {
+mongodb.MongoClient.connect(process.env.MONGODB_MAROON_URI, function (errMessage, database) {
   // Save database object from the callback for reuse.
   db = database;
 

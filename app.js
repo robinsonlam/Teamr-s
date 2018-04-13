@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const cors = require('cors')
+
 
 require('express-async-errors');
 
@@ -21,6 +23,8 @@ let authenticator = (req, res, next) => { next(); };
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.use(cors());
 
 app.use(logger('dev'));
 
